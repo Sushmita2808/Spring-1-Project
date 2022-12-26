@@ -20,10 +20,6 @@ public interface CustomerRepository extends JpaRepository<Customer, Long> {
 	@Query(value = "SELECT * FROM customers  where contact_last_name = ?",nativeQuery=true)
 	public List<Customer> findByLastname(String contactLastName);
 	
-	//@Query(value = "SELECT * FROM customers  Where contact_last_name  like 'Kum%'", nativeQuery = true)
-	//public Optional<Customer> findByNames(String contactLastName); 
-	
-	
 	@Query("from Customer" )
 	public List<Customer> findCustomers(Pageable pageable);
 	
